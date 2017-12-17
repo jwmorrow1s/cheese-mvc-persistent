@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${menu}">
+    <table class="table">
+        <!-- wants ul -->
+        <tr>
+            <th>Item</th>
+        </tr>
+
+        <tr th:each="item : ${menu.cheeses}">
+            <td th:text="${item.name}"></td>
+        </tr>
+    </table>
+
+    <p><a th:href="'/menu/add-item/' + ${menu.id}">Add Cheese</a></p>
+
+</form>
+
+</body>
+</html>

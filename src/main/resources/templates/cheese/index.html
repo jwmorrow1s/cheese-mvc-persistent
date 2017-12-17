@@ -22,10 +22,11 @@
     <tr th:each="cheese : ${cheeses}">
         <td th:text="${cheese.name}"></td>
         <td th:text="${cheese.description}"></td>
-        <td th:text="${cheese.type.name}"></td>
+        <td th:text="${cheese.category.name}"></td>
     </tr>
 
 </table>
-
+<a href="/cheese/add" style="display:block">Add Cheese</a>
+<a href="/cheese/remove">Remove Cheese</a>
 </body>
 </html>
